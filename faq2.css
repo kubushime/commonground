@@ -1,151 +1,68 @@
-/* --- FUNDAMENT STYLU --- */
-:root {
-    --primary-green: #00ff88;
-    --bg-dark: #050505;
-    --accent-glow: rgba(0, 255, 136, 0.3);
-    --soft-green: #888;
-}
+/* --- FAQ SPECIFIC STYLE --- */
 
-/* --- KONTENER GŁÓWNY --- */
-.soon-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background: radial-gradient(circle at center, rgba(46, 204, 113, 0.05) 0%, var(--bg-dark) 80%);
-    position: relative;
-    z-index: 10;
-}
-
-.content-box {
-    max-width: 800px;
-    width: 100%;
-}
-
-/* --- BADGE I NAPISY --- */
-.badge {
-    background: rgba(46, 204, 113, 0.1);
-    color: var(--primary-green);
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: 1px solid var(--primary-green);
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-}
-
-.soon-title {
-    font-size: clamp(3rem, 10vw, 5rem);
-    font-weight: 900;
-    margin-bottom: 20px;
-    letter-spacing: -2px;
-}
-
-.soon-title span {
-    color: var(--primary-green);
-    text-shadow: 0 0 40px var(--accent-glow);
-}
-
-.description {
-    color: var(--soft-green);
-    font-size: 1.1rem;
-    margin-bottom: 45px;
-    line-height: 1.6;
-}
-
-/* --- GRID KART --- */
-.manual-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+.header-section {
     margin-bottom: 50px;
 }
 
-.manual-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 25px;
-    border-radius: 8px;
-    text-align: left;
-    transition: 0.3s;
-}
-
-.manual-card:hover {
-    border-color: var(--primary-green);
-    background: rgba(0, 255, 136, 0.02);
-}
-
-.manual-card h3 {
-    color: var(--primary-green);
-    font-size: 1.1rem;
-    margin: 0 0 10px 0;
-}
-
-.manual-card p {
-    color: #888;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* --- PASEK POSTĘPU --- */
-.progress-container {
+/* Karty informacyjne - dopasowane do stylu Twoich przycisków */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
     width: 100%;
-    max-width: 400px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    margin: 0 auto 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
 }
 
-.progress-bar-fill {
-    height: 100%;
-    background: var(--primary-green);
-    box-shadow: 0 0 20px var(--primary-green);
-    width: 0%; 
-    animation: fill92 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards,
-               neonPulse 2s infinite ease-in-out;
+.faq-card {
+    background: rgba(255, 255, 255, 0.03); /* Bardzo delikatne tło */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.3s ease;
 }
 
-.status-text {
-    font-size: 0.85rem !important;
+/* Hover zgodny z Twoim stylem btn-secondary */
+.faq-card:hover {
+    background: rgba(0, 255, 136, 0.02);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.faq-card h3 {
+    color: var(--primary);
+    margin: 0 0 15px 0;
+    font-size: 20px;
     font-weight: 900;
-    letter-spacing: 2px;
-    color: var(--primary-green);
-    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- ANIMACJE --- */
-@keyframes fill92 {
-    0% { width: 0%; }
-    100% { width: 92%; }
+.faq-card p {
+    color: var(--text-dim);
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-@keyframes neonPulse {
-    0% { opacity: 0.7; box-shadow: 0 0 10px var(--primary-green); }
-    50% { opacity: 1; box-shadow: 0 0 25px var(--primary-green); }
-    100% { opacity: 0.7; box-shadow: 0 0 10px var(--primary-green); }
+/* Naprawa marginesów dla treści */
+.main-content {
+    justify-content: flex-start !important; /* Pozwala na przewijanie jeśli treści jest dużo */
+    padding-top: 100px !important;
+    overflow-y: auto;
 }
 
-/* --- PRZYCISK POWROTU --- */
-.btn-back {
-    display: inline-block;
-    margin-top: 40px;
-    color: var(--soft-green);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    opacity: 0.6;
+/* Pasek przewijania (Scrollbar) pasujący do stylu */
+::-webkit-scrollbar {
+    width: 8px;
 }
-
-.btn-back:hover {
-    color: var(--primary-green);
-    opacity: 1;
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #111;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
