@@ -1,0 +1,156 @@
+/* --- IMPORT ZMIENNYCH Z TWOJEGO STYLU --- */
+:root {
+    --primary-green: #00ff88;
+    --bg-dark: #050505;
+    --accent-glow: rgba(0, 255, 136, 0.3);
+    --soft-green: #888;
+}
+
+/* --- KONTENER GŁÓWNY (Identiko jak w index2) --- */
+.manual-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, rgba(46, 204, 113, 0.05) 0%, var(--bg-dark) 80%);
+    position: relative;
+    z-index: 10;
+}
+
+/* --- NAGŁÓWEK --- */
+.manual-header {
+    margin-bottom: 60px;
+}
+
+.badge {
+    background: rgba(46, 204, 113, 0.1);
+    color: var(--primary-green);
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--primary-green);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: var(--primary-green);
+    text-shadow: 0 0 40px var(--accent-glow);
+}
+
+.description {
+    color: var(--soft-green);
+    font-size: 0.9rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- GRID KART (NAPRAWIONY) --- */
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 50px;
+}
+
+.manual-card {
+    background: rgba(255, 255, 255, 0.02); /* Ciemne, lekko prześwitujące */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.manual-card:hover {
+    border-color: var(--primary-green);
+    background: rgba(0, 255, 136, 0.02);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-num {
+    color: var(--primary-green);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.manual-card h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.manual-card p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.manual-card strong {
+    color: #fff;
+}
+
+/* --- PASEK POSTĘPU NA DOLE --- */
+.system-status {
+    width: 100%;
+    max-width: 400px;
+}
+
+.progress-container {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary-green);
+    box-shadow: 0 0 20px var(--primary-green);
+    width: 92%; /* Na sztywno jak na screenie */
+}
+
+.status-text {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--primary-green);
+    letter-spacing: 2px;
+}
+
+/* --- PRZYCISK POWROTU --- */
+.btn-back {
+    margin-top: 40px;
+    color: var(--soft-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    color: var(--primary-green);
+    opacity: 1;
+}
